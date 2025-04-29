@@ -1,1 +1,1 @@
-export default 'https://musical-kitten-e01f93.netlify.app' //http://localhost:3720  https://musical-kitten-e01f93.netlify.app
+export default 'https://flamepostbackend-production.up.railway.app' //http://localhost:3720  https://flamepostbackend-production.up.railway.app
