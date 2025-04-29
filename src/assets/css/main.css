@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url('/src/assets/pictures/OIP.jpg'); /*MK/mia-khalifa-1_0050_300px.jpg , pictures/OIP.jpg*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}

@@ -1,0 +1,36 @@
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+textarea,
+label {
+  margin-bottom: 25px;
+}
+
+textarea {
+  width: 60vw;
+}
+
+.gone {
+  border-radius: 50%;
+  background-color: yellow;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+.gone:hover {
+  background-color: red;
+}
