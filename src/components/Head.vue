@@ -15,7 +15,6 @@ export default {
       meta: [
         { charset: 'utf-8' },
         { 'http-equiv': 'Content-Security-Policy', content: 'upgrade-insecure-requests' }, // Forces HTTPS
-        { 'http-equiv': 'Set-Cookie', content: 'SameSite=None; Secure' }, // For cross-domain sessions
         { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
         { 'http-equiv': 'Cache-Control', content: 'no-store' },
       ],

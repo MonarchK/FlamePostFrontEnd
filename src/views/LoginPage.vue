@@ -58,6 +58,7 @@ export default {
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
+          'Cache-Control': 'no-store',
         },
         body: JSON.stringify(details),
       }).then(async (result) => {

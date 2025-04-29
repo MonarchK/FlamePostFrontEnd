@@ -9,6 +9,9 @@ export const sessionStore = defineStore('session', () => {
   async function fetchSession() {
     await fetch(destination + '/api/user/status', {
       credentials: 'include',
+      headers: {
+        'Cache-Control': 'no-store',
+      },
     })
       .then(async (result) => {
         const data = await result.json()
