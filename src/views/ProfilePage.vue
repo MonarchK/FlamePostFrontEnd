@@ -25,7 +25,7 @@
     <p>nothing here yet</p>
     <button
       class="fas fa-plus new"
-      v-if="session.login && session.account == user.username"
+      v-if="session.login && session.account == posts.user.username"
       @click="$router.push('/api/post/new')"
     ></button>
   </div>
