@@ -51,6 +51,9 @@ export default {
       formData.append('media', post.media)
       await fetch(destination + '/api/post/store', {
         method: 'POST',
+        headers: {
+          Authorization: 'Beacon ' + localStorage.getItem('jwt'),
+        },
         credentials: 'include',
         body: formData,
       }).then(async (result) => {

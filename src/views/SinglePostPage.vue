@@ -115,6 +115,9 @@ export default {
       formData.append('media', comment.media)
       const result = await fetch(destination + '/api' + router.currentRoute.value.path + '/reply', {
         method: 'POST',
+        headers: {
+          Authorization: 'Beacon ' + localStorage.getItem('jwt'),
+        },
         credentials: 'include',
         body: formData,
       })

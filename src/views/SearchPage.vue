@@ -85,6 +85,7 @@ export default {
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: 'Beacon ' + localStorage.getItem('jwt'),
         },
         body: JSON.stringify({ search: search.value, filter: filter.value }),
       }).then(async (result) => {

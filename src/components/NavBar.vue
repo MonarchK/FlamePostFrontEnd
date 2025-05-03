@@ -59,6 +59,9 @@ export default {
     async function handleLogout() {
       await fetch(destination + '/api/auth/logout', {
         method: 'POST',
+        headers: {
+          Authorization: 'Beacon ' + localStorage.getItem('jwt'),
+        },
         credentials: 'include',
       }).then(async (results) => {
         const data = await results.json()

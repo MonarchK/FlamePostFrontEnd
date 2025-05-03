@@ -54,6 +54,9 @@ export default {
       formData.append('media', post.media)
       await fetch(destination + '/api' + router.currentRoute.value.path, {
         method: 'POST',
+        headers: {
+          Authorization: 'Beacon ' + localStorage.getItem('jwt'),
+        },
         credentials: 'include',
         body: formData,
       }).then(async (result) => {
@@ -72,6 +75,9 @@ export default {
         destination + '/api/post/delete/' + router.currentRoute.value.path.split('/')[3],
         {
           method: 'DELETE',
+          headers: {
+            Authorization: 'Beacon ' + localStorage.getItem('jwt'),
+          },
           credentials: 'include',
         },
       ).then(async (result) => {
