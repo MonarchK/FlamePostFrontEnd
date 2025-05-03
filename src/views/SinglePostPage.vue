@@ -1,7 +1,7 @@
 <template>
   <HeadT title="Post" />
   <NavBar />
-  <div id="main">
+  <div id="main">//my attempt to update repo directly from gui instead of git
     <div v-if="failure">
       <p class="alert alert-danger" v-text="failure"></p>
     </div>
