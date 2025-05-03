@@ -90,6 +90,9 @@ export default {
     const allReplies = ref(null)
     async function fetchData() {
       fetch(destination + '/api' + router.currentRoute.value.path, {
+        headers: {
+          Authorization: 'Beacon ' + localStorage.getItem('jwt'),
+        },
         credentials: 'include',
       })
         .then(async (result) => {

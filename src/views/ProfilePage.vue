@@ -48,7 +48,11 @@ export default {
       store: null,
       user: null,
     })
-    fetch(destination + '/api' + router.currentRoute.value.path).then(async (result) => {
+    fetch(destination + '/api' + router.currentRoute.value.path, {
+      headers: {
+        Authorization: 'Beacon ' + localStorage.getItem('jwt'),
+      },
+    }).then(async (result) => {
       const data = await result.json()
       if (data.allPosts) {
         posts.store = data.allPosts
