@@ -63,6 +63,7 @@ export default {
       }).then(async (results) => {
         const data = await results.json()
         if (data.success) {
+          localStorage.removeItem('jwt')
           if (router.currentRoute.value.path == '/') {
             await router.replace('/random')
             await router.replace('/')

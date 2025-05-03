@@ -7,6 +7,7 @@ import ContactPage from '@/views/ContactPage.vue'
 import SignUpPage from '@/views/SignUpPage.vue'
 import LoginPage from '@/views/LoginPage.vue'
 import NotFound from '@/views/NotFound.vue'
+import AuthCallback from '@/views/AuthCallback.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -67,6 +68,11 @@ const router = createRouter({
       name: 'UpdatePostPage',
       component: () => import('../views/UpdatePostPage.vue'),
       meta: { requiresAuth: true },
+    },
+    {
+      path: '/login-success?token',
+      name: 'AuthCallback',
+      component: AuthCallback,
     },
     {
       path: '/:pathMatch(.*)*',

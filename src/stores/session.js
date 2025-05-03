@@ -8,7 +8,9 @@ export const sessionStore = defineStore('session', () => {
 
   async function fetchSession() {
     await fetch(destination + '/api/user/status', {
-      credentials: 'include',
+      headers: {
+        Authorization: 'Beacon ' + localStorage.getItem('jwt'),
+      },
     })
       .then(async (result) => {
         const data = await result.json()

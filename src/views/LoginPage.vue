@@ -29,6 +29,7 @@
       </label>
       <button>Login</button>
     </form>
+    <div class="present" @click="gitLogin">github</div>
   </div>
 </template>
 <script>
@@ -65,20 +66,30 @@ export default {
         if (data.failure) {
           failure.value = data.failure
           close.warning(failure)
-        } else {
+        }
+        if (data.token) {
+          localStorage.setItem('jwt', data.token)
           router.replace({ path: '/' })
         }
       })
+    }
+
+    function gitLogin() {
+      window.location.href = destination + '/api/auth/github'
     }
 
     onBeforeUnmount(() => {
       clearTimeout(close.closeWarning())
     })
 
-    return { details, failure, handleSubmit }
+    return { details, failure, handleSubmit, destination, gitLogin }
   },
 }
 </script>
 <style scoped>
 @import '/src/assets/css/form.css';
+div .present {
+  height: 300px;
+  width: 300px;
+}
 </style>
