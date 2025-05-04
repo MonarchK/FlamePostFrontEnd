@@ -70,7 +70,7 @@ const router = createRouter({
       meta: { requiresAuth: true },
     },
     {
-      path: '/login-success?token',
+      path: '/login-success',
       name: 'AuthCallback',
       component: AuthCallback,
     },
