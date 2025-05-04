@@ -88,7 +88,9 @@ export default {
       const checkPopup = setInterval(async () => {
         if (popup.closed) {
           clearInterval(checkPopup)
-          await fetch(destination + '/api/auth/github/callback')
+          await fetch(destination + '/api/auth/github/callback', {
+            credentials: 'include'
+          })
             .then(async (result) => {
               const data = await result.json()
               if (data.token) {
