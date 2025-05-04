@@ -29,7 +29,16 @@
       </label>
       <button>Login</button>
     </form>
-    <div class="present" @click="gitLogin">github</div>
+    <div class="oauth">
+      <p>Or Login with:</p>
+      <div class="oauth-list">
+        <div class="present" @click="gitLogin"></div>
+        <span class="fa-stack fa-lg">
+          <i class="fas fa-circle fa-stack-2x"></i>
+          <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -88,8 +97,21 @@ export default {
 </script>
 <style scoped>
 @import '/src/assets/css/form.css';
+.oauth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.oauth-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 div .present {
-  height: 300px;
-  width: 300px;
+  cursor: pointer;
 }
 </style>
