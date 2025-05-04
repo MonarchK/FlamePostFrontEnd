@@ -89,7 +89,10 @@ export default {
         if (popup.closed) {
           clearInterval(checkPopup)
           await fetch(destination + '/api/auth/github/callback', {
-            credentials: 'include'
+            credentials: 'include',
+            headers: {
+            Authorization: 'Bearer ' + null
+          },
           })
             .then(async (result) => {
               const data = await result.json()
