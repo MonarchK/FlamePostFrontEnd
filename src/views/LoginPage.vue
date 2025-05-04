@@ -32,8 +32,8 @@
     <div class="oauth">
       <p>Or Login with:</p>
       <div class="oauth-list">
-        <div class="present" @click="gitLogin"></div>
-        <span class="fa-stack fa-lg">
+        <div class="present"></div>
+        <span class="fa-stack fa-lg" @click="gitLogin">
           <i class="fas fa-circle fa-stack-2x"></i>
           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
         </span>
