@@ -85,29 +85,24 @@ export default {
 
     function gitLogin() {
       const popup = window.open(destination + '/api/auth/github', '_blank')
-      const checkPopup = setInterval(async () => {
-        if (popup.closed) {
-          clearInterval(checkPopup)
-          await fetch(destination + '/api/auth/github/callback', {
-            credentials: 'include',
-            headers: {
-            Authorization: 'Bearer ' + null
-          },
-          })
-            .then(async (result) => {
-              const data = await result.json()
-              if (data.token) {
-                localStorage.setItem('jwt', data.token)
-                router.replace('/')
-              }
-            })
-            .catch((error) => {
-              console.log(error)
-              failure.value = 'Oauth login failed'
-              close.warning(failure)
-            })
-        }
-      })
+      if (popup) {
+        window.addEventListener('message', (event) => {
+          if (event.origin != destination + '/api/auth/github/callback') {
+            failure.value = 'Failed'
+            close.warning(failure)
+          }
+          if (event.data.token) {
+            localStorage.setItem('jwt', event.data.token)
+            router.replace('/')
+          } else {
+            failure.value = 'Failed'
+            close.warning(failure)
+          }
+        })
+      } else {
+        window.location.href = destination + '/api/auth/github'
+      }
+
       //window.location.href = destination + '/api/auth/github'
     }
 
