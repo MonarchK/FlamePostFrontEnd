@@ -88,14 +88,14 @@ export default {
       if (popup) {
         window.addEventListener('message', (event) => {
           if (event.origin != destination + '/api/auth/github/callback') {
-            failure.value = 'Failed'
+            failure.value = 'Failed TO SEND'
             close.warning(failure)
           }
           if (event.data.token) {
             localStorage.setItem('jwt', event.data.token)
             router.replace('/')
           } else {
-            failure.value = 'Failed'
+            failure.value = 'Failed TO SNED'
             close.warning(failure)
           }
         })
